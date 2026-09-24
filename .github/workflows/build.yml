@@ -17,12 +17,13 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
-
       - name: Build Debug APK
         working-directory: android
+        env:
+          ANDROID_HOME: ${{ env.ANDROID_HOME }}
+          ANDROID_SDK_ROOT: ${{ env.ANDROID_HOME }}
         run: |
+          echo "sdk.dir=$ANDROID_HOME" > local.properties
           chmod +x ./gradlew
           ./gradlew :app:assembleDebug --no-daemon --stacktrace
 
