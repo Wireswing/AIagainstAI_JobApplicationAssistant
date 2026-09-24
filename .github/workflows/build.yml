@@ -24,9 +24,6 @@ jobs:
 
       - name: Build Debug APK
         working-directory: android
-        env:
-          JAVA_HOME: /usr/lib/jvm/temurin-17
-          ANDROID_HOME: /usr/local/lib/android/sdk
         run: |
           echo "sdk.dir=$ANDROID_HOME" > local.properties
           chmod +x ./gradlew
