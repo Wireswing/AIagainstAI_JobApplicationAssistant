@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">51job面试助手</string>
+    <string name="assist_desc">监听51job App 的 AI 面试问题弹窗，并基于您的简历生成回答草稿</string>
+</resources>

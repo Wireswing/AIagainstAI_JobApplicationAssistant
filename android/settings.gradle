@@ -1,0 +1,2 @@
+rootProject.name = "AIAssist51job"
+include(":app")
