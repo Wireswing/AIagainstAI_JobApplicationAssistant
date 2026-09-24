@@ -1,4 +1,4 @@
-# 51job AI 面试助手（@yujun.aiassist）
+# 51job AI 面试助手（@eurusss.aiassist）
 
 给前程无忧 51job Android App 用的悬浮窗助手：**当你投递简历后触发 AI 面试问答时，实时抓取问题文本，结合你的简历，调用你自己配置的 LLM 生成回答草稿**，悬浮展示供你参考。
 
