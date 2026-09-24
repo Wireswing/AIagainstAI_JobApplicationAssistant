@@ -17,11 +17,16 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      - name: Accept Android SDK licenses
+        run: |
+          yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses || true
+          yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "platform-tools" "platforms;android-34" "build-tools;34.0.0" || true
+
       - name: Build Debug APK
         working-directory: android
         env:
-          ANDROID_HOME: ${{ env.ANDROID_HOME }}
-          ANDROID_SDK_ROOT: ${{ env.ANDROID_HOME }}
+          JAVA_HOME: /usr/lib/jvm/temurin-17
+          ANDROID_HOME: /usr/local/lib/android/sdk
         run: |
           echo "sdk.dir=$ANDROID_HOME" > local.properties
           chmod +x ./gradlew
